@@ -21,7 +21,7 @@ import com.sc.serkancura.parser.RSSFeed;
 
 public class SplashActivity extends Activity {
 
-	String RSSFEEDURL = "http://feeds.feedburner.com/serkancura?format=xml";
+	String RSSFEEDURL = "http://feeds.feedburner.com/SerkanCura?format=xml";
 	RSSFeed feed;
 	String fileName;
 
