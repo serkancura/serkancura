@@ -64,14 +64,15 @@ public class DOMParser {
 
 						else if ("description".equals(nodeName)) {
 							_item.setDescription(theString);
-
-							// Parse the html description to get the image url
-							String html = theString;
-							org.jsoup.nodes.Document docHtml = Jsoup
-									.parse(html);
-							Elements imgEle = docHtml.select("img");
-							_item.setImage(imgEle.attr("src"));
 						}
+                        else if ("content:encoded".equals(nodeName)) {
+                            // Parse the html description to get the image url
+                            String html = theString;
+                            org.jsoup.nodes.Document docHtml = Jsoup
+                                    .parse(html);
+                            Elements imgEle = docHtml.select("img");
+                            _item.setImage(imgEle.attr("src"));
+                        }
 
 						else if ("pubDate".equals(nodeName)) {
 
